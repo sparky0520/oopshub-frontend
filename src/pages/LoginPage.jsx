@@ -16,7 +16,6 @@ export default function LoginPage() {
     axios
       .post("http://127.0.0.1:8000/auth/login", user)
       .then((token) => {
-        console.log(token);
         console.log("User loggedin successfully!");
         navigate("/join-company", { state: { token } });
       })

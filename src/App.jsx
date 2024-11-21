@@ -1,3 +1,4 @@
+import AdminPanelPage from "./pages/Admin/AdminPanelPage";
 import CreateCompanyPage from "./pages/CreateCompanyPage";
 import JoinCompanyPage from "./pages/JoinCompanyPage";
 import LoginPage from "./pages/LoginPage";
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/join-company" element={<JoinCompanyPage />} />
         <Route path="/create-company" element={<CreateCompanyPage />} />
+        <Route path="/admin-panel" element={<AdminPanelPage />} />
       </Routes>
     </BrowserRouter>
   );

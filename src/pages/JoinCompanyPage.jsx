@@ -16,12 +16,12 @@ export default function JoinCompanyPage() {
         token
       )
       .then(() => {
-        console.log("User loggedin successfully!");
-        navigate("/join-company");
+        console.log("Request to join company sent successfully!");
+        navigate("/create-company");
       })
       .catch((error) => {
         console.log(error);
-        alert("Error logging in new user.");
+        alert("Error sending request to join company.");
       });
   }
 
