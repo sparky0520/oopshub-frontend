@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../api/axiosInstance";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -14,7 +14,7 @@ export default function CreateCompanyPage() {
       aiEnabled,
     };
     console.log(company);
-    axios
+    api
       .post(`http://127.0.0.1:8000/companies/`, company)
       .then(() => {
         console.log("Created company successfully!");

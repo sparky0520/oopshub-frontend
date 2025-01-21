@@ -1,20 +1,14 @@
-import axios from "axios";
+import api from "../api/axiosInstance";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function JoinCompanyPage() {
   const [companyid, setCompanyid] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
-  const { token } = location.state || {};
-
   function handleSubmit(event) {
     event.preventDefault(); // prevents reload
-    axios
-      .post(
-        `http://127.0.0.1:8000/companies/${companyid}/access-request`,
-        token
-      )
+    api
+      .post(`http://127.0.0.1:8000/companies/${companyid}/access-request`)
       .then(() => {
         console.log("Request to join company sent successfully!");
         navigate("/create-company");

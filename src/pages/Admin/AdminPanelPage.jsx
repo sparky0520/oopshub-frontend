@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../../api/axiosInstance";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -6,7 +6,7 @@ export default function AdminPanelPage() {
   const [requests, setRequests] = useState([]);
 
   useEffect(() => {
-    axios
+    api
       .get("http://127.0.0.1:8000/admin/access-requests")
       .then((reqs) => {
         console.log(reqs);

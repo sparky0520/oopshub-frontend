@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
@@ -13,11 +13,12 @@ export default function LoginPage() {
       email,
       password,
     };
-    axios
+    api
       .post("http://127.0.0.1:8000/auth/login", user)
       .then((token) => {
         console.log("User loggedin successfully!");
-        navigate("/join-company", { state: { token } });
+        console.log("Token: " + token.data);
+        navigate("/join-company");
       })
       .catch((error) => {
         console.log(error);
